@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>PASTI KAYA - Account Suspended</title>
+
+    <!-- Google Fonts: Jomhuria & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&family=Montserrat:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .font-jomhuria {
+            font-family: 'Jomhuria', cursive;
+            line-height: 0.85;
+        }
+
+        .font-montserrat-semibold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Standard Android Compact Container */
+        .mobile-container {
+            width: 100%;
+            max-width: 412px;
+            background-color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body class="bg-black text-white antialiased">
+
+    <div class="mobile-container pb-20 overflow-hidden">
+
+        <!-- HEADER / TOP BAR WITH LOGO & TITLE -->
+        <div class="flex items-center justify-between px-4 pt-4 pb-2">
+
+            <!-- Left Section: Logo + Title PASTI KAYA -->
+            <div class="flex items-center gap-2">
+
+                <!-- Logo Container -->
+                <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center">
+                    <img id="headerLogoImg" src="logo.png" alt="Logo"
+                        onerror="this.src='https://via.placeholder.com/100x100/1a1a1a/FBBE21?text=LOGO'"
+                        class="w-full h-full object-contain">
+                </div>
+
+                <!-- Title & 2 Double Underlines -->
+                <div class="flex flex-col justify-center">
+                    <h1
+                        class="font-jomhuria font-normal text-[28px] leading-[0.7] tracking-[-0.5px] text-[#FBBE21] uppercase select-none">
+                        PASTI KAYA
+                    </h1>
+
+                    <!-- 2 Garis Kuning -->
+                    <div class="flex flex-col gap-[2px] -mt-1.5 w-full">
+                        <div class="h-[2px] bg-[#FBBD1F] w-full"></div>
+                        <div class="h-[1.5px] bg-[#DAA520] w-[60%]"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Section: Action Icons Warna #CE970C -->
+            <div class="flex items-center gap-2.5">
+                <button class="text-[#CE970C] hover:opacity-80 transition-opacity">
+                    <i class="ph ph-headset text-2xl"></i>
+                </button>
+                <button
+                    class="w-6 h-6 rounded-full border-[1.5px] border-[#CE970C] flex items-center justify-center text-[#CE970C] font-bold text-xs hover:opacity-80 transition-opacity">
+                    ?
+                </button>
+            </div>
+
+        </div>
+
+        <!-- TOTAL ASSET SECTION (Rp 0 SESUAI FIGMA) -->
+        <div class="px-4 mt-3 w-full">
+            <p class="font-montserrat-semibold text-[#FBBE21] text-[14px] tracking-wide mb-1.5">
+                Total Asset
+            </p>
+
+            <div
+                class="w-full bg-[#483E3E]/15 rounded-[18px] py-3.5 px-4 flex items-center justify-center border border-white/5 shadow-inner">
+                <h2
+                    class="font-montserrat-semibold text-[32px] text-[#FBBE21] tracking-tight leading-none text-center select-none">
+                    Rp 0
+                </h2>
+            </div>
+        </div>
+
+        <!-- ACTION BUTTONS (BUY, SELL, MORE) -->
+        <div class="grid grid-cols-3 gap-3 px-4 mt-6">
+            <button class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm">
+                Buy
+            </button>
+            <button class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm">
+                Sell
+            </button>
+            <button class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm">
+                More
+            </button>
+        </div>
+
+        <!-- SUBTITLE TEXT -->
+        <div class="px-4 mt-4 text-center">
+            <p class="font-montserrat-semibold text-[#FBBE21] text-sm tracking-wide">
+                duit loe lagi gw puter
+            </p>
+        </div>
+
+        <!-- CANDLESTICK CHART CONTAINER -->
+        <div class="px-4 mt-3">
+            <div class="bg-[#141414] border border-neutral-800 rounded-xl p-3 relative overflow-hidden">
+
+                <div class="relative w-full h-[180px] flex flex-col justify-between py-1">
+                    <div class="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-20">
+                        <div class="border-b border-gray-400 w-full"></div>
+                        <div class="border-b border-gray-400 w-full"></div>
+                        <div class="border-b border-gray-400 w-full"></div>
+                        <div class="border-b border-gray-400 w-full"></div>
+                        <div class="border-b border-gray-400 w-full"></div>
+                    </div>
+
+                    <div
+                        class="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-[9px] text-gray-500 font-mono">
+                        <span>105</span>
+                        <span>100</span>
+                        <span>95</span>
+                        <span>90</span>
+                        <span>85</span>
+                    </div>
+
+                    <svg class="w-full h-full pl-6 pt-1 pb-1" viewBox="0 0 300 180" preserveAspectRatio="none">
+                        <line x1="20" y1="20" x2="20" y2="100" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="17" y="30" width="6" height="50" fill="#ef4444" rx="1" />
+
+                        <line x1="35" y1="50" x2="35" y2="120" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="32" y="60" width="6" height="40" fill="#ef4444" rx="1" />
+
+                        <line x1="50" y1="70" x2="50" y2="130" stroke="#FBBE21" stroke-width="1.5" />
+                        <rect x="47" y="80" width="6" height="35" fill="#FBBE21" rx="1" />
+
+                        <line x1="65" y1="60" x2="65" y2="140" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="62" y="75" width="6" height="50" fill="#ef4444" rx="1" />
+
+                        <line x1="80" y1="80" x2="80" y2="135" stroke="#FBBE21" stroke-width="1.5" />
+                        <rect x="77" y="90" width="6" height="30" fill="#FBBE21" rx="1" />
+
+                        <line x1="95" y1="70" x2="95" y2="145" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="92" y="85" width="6" height="45" fill="#ef4444" rx="1" />
+
+                        <line x1="110" y1="90" x2="110" y2="150" stroke="#FBBE21" stroke-width="1.5" />
+                        <rect x="107" y="100" width="6" height="35" fill="#FBBE21" rx="1" />
+
+                        <line x1="125" y1="110" x2="125" y2="170" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="122" y="120" width="6" height="40" fill="#ef4444" rx="1" />
+
+                        <line x1="140" y1="120" x2="140" y2="175" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="137" y="130" width="6" height="35" fill="#ef4444" rx="1" />
+
+                        <line x1="155" y1="100" x2="155" y2="165" stroke="#FBBE21" stroke-width="1.5" />
+                        <rect x="152" y="110" width="6" height="40" fill="#FBBE21" rx="1" />
+
+                        <line x1="170" y1="125" x2="170" y2="178" stroke="#ef4444" stroke-width="1.5" />
+                        <rect x="167" y="135" width="6" height="35" fill="#ef4444" rx="1" />
+                    </svg>
+                </div>
+
+                <div class="flex justify-between pl-6 text-[9px] text-gray-500 font-mono mt-1">
+                    <span>1</span>
+                    <span>8</span>
+                    <span>15</span>
+                    <span>22</span>
+                    <span>2930</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER IMAGE SECTION -->
+        <div class="px-4 mt-4 mb-5">
+            <div class="text-center mb-1.5">
+                <span class="font-montserrat-semibold text-gray-300 text-xs">Stroberi 11 Gacor</span>
+            </div>
+            <div
+                class="w-full h-[150px] rounded-xl overflow-hidden border border-neutral-800 bg-neutral-900 flex items-center justify-center">
+                <img id="bannerImg" src="banner.jpg" alt="Stroberi 11 Gacor"
+                    onerror="this.src='https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop'"
+                    class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- ========================================================== -->
+        <!-- POPUP MODAL SUSPENDED (Overlay di atas dashboard) -->
+        <!-- ========================================================== -->
+        <!-- SF Pro Font CDN -->
+        <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display">
+
+        <!-- POPUP MODAL SUSPENDED (PRESISI FIGMA) -->
+        <div class="absolute inset-0 z-40 bg-black/60 backdrop-blur-[2px] flex items-center justify-center px-4">
+
+            <!-- Card Container: Proporsi Vertikal, Fill #090909 70%, Stroke #FFB701 -->
+            <div class="w-[340px] h-[300px] bg-[#090909]/75 border-[1.5px] border-[#FFB701] pt-7 pb-10 px-5 flex flex-col items-center text-center shadow-2xl backdrop-blur-md"
+                style="font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;">
+
+                <!-- Logo Danger/Warning Segitiga Merah Sesuai Figma -->
+                <div class="mb-3 flex items-center justify-center">
+                    <svg width="68" height="60" viewBox="0 0 68 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M30.5359 3.5C32.0755 0.833333 35.9245 0.833335 37.4641 3.5L66.0416 53C67.5812 55.6667 65.6567 59 62.5775 59H5.42247C2.34327 59 0.418772 55.6667 1.95837 53L30.5359 3.5Z"
+                            fill="#C80804" />
+                        <rect x="31" y="18" width="6" height="22" rx="3" fill="black" />
+                        <circle cx="34" cy="47" r="3.5" fill="black" />
+                    </svg>
+                </div>
+
+                <!-- Title ACCOUNT SUSPENDED (Merah #C80804 & SF Pro Bold) -->
+                <h3 class="font-bold text-[#C80804] text-[19px] tracking-[0.5px] uppercase mb-3">
+                    ACCOUNT SUSPENDED
+                </h3>
+
+                <!-- Description Teks (Putih SF Pro Medium, Center & Spacing Pas) -->
+                <p class="font-normal text-white text-[14px] leading-[1.35] tracking-tight max-w-[240px] mb-6">
+                    Yahaha mampus kena tipu<br>duit lu buat gw semua
+                </p>
+
+                <!-- Tombol Mampus (Warna #D49400 / #C58F04 & SF Pro Semibold) -->
+                <button onclick="this.closest('.absolute').remove()"
+                    class="w-full py-3 bg-[#D49400] hover:bg-[#b88100] text-white font-bold text-[17px] rounded-xl transition-all active:scale-95 shadow-lg">
+                    Mampus
+                </button>
+
+            </div>
+
+        </div>
+        <!-- BOTTOM NAVIGATION BAR -->
+        <div
+            class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[412px] bg-[#121212] border-t border-neutral-800 px-6 py-2.5 flex justify-between items-center z-50">
+            <button class="flex flex-col items-center gap-1 text-[#FBBE21]">
+                <i class="ph-fill ph-house text-xl"></i>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#FBBE21] transition-colors">
+                <i class="ph ph-storefront text-xl"></i>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#FBBE21] transition-colors">
+                <i class="ph ph-wallet text-xl"></i>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-gray-400 hover:text-[#FBBE21] transition-colors">
+                <i class="ph ph-user text-xl"></i>
+            </button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
