@@ -119,7 +119,8 @@
             <button class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm">
                 Buy
             </button>
-            <button class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm">
+            <button onclick="handleSell()"
+                class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm hover:bg-[#FBBE21] hover:text-black transition-all active:scale-95">
                 Sell
             </button>
             <button class="py-2.5 rounded-xl border border-[#FBBE21] text-[#FBBE21] font-montserrat-semibold text-sm">
@@ -332,19 +333,20 @@
         </div>
 
         <!-- ========================================================== -->
-        <!-- POPUP MODAL SUSPENDED (Overlay di atas dashboard) -->
+        <!-- POPUP MODAL SUSPENDED (HANYA 1 ELEMEN & DISAMBUNGKAN KE ID) -->
         <!-- ========================================================== -->
         <!-- SF Pro Font CDN -->
         <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display">
 
-        <!-- POPUP MODAL SUSPENDED (PRESISI FIGMA) -->
-        <div class="absolute inset-0 z-40 bg-black/60 backdrop-blur-[2px] flex items-center justify-center px-4">
+        <!-- POPUP MODAL SUSPENDED (TERSEMBUNYI DENGAN CLASS hidden DI AWAL) -->
+        <div id="suspendedModal"
+            class="hidden absolute inset-0 z-40 bg-black/60 backdrop-blur-[2px] flex items-center justify-center px-4">
 
-            <!-- Card Container: Proporsi Vertikal, Fill #090909 70%, Stroke #FFB701 -->
+            <!-- Card Container -->
             <div class="w-[340px] h-[300px] bg-[#090909]/75 border-[1.5px] border-[#FFB701] pt-7 pb-10 px-5 flex flex-col items-center text-center shadow-2xl backdrop-blur-md"
                 style="font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;">
 
-                <!-- Logo Danger/Warning Segitiga Merah Sesuai Figma -->
+                <!-- Logo Danger Segitiga Merah -->
                 <div class="mb-3 flex items-center justify-center">
                     <svg width="68" height="60" viewBox="0 0 68 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -355,18 +357,18 @@
                     </svg>
                 </div>
 
-                <!-- Title ACCOUNT SUSPENDED (Merah #C80804 & SF Pro Bold) -->
+                <!-- Title ACCOUNT SUSPENDED -->
                 <h3 class="font-bold text-[#C80804] text-[19px] tracking-[0.5px] uppercase mb-3">
                     ACCOUNT SUSPENDED
                 </h3>
 
-                <!-- Description Teks (Putih SF Pro Medium, Center & Spacing Pas) -->
+                <!-- Description Teks -->
                 <p class="font-normal text-white text-[14px] leading-[1.35] tracking-tight max-w-[240px] mb-6">
                     Yahaha mampus kena tipu<br>duit lu buat gw semua
                 </p>
 
-                <!-- Tombol Mampus (Warna #D49400 / #C58F04 & SF Pro Semibold) -->
-                <button onclick="this.closest('.absolute').remove()"
+                <!-- Tombol Mampus -->
+                <button onclick="document.getElementById('suspendedModal').classList.add('hidden')"
                     class="w-full py-3 bg-[#D49400] hover:bg-[#b88100] text-white font-bold text-[17px] rounded-xl transition-all active:scale-95 shadow-lg">
                     Mampus
                 </button>
@@ -392,6 +394,22 @@
         </div>
 
     </div>
+    <!-- SCRIPT PENGHITUNG KLIK SELL (3X KLIK UNTUK MUNCULIN NOTIF) -->
+    <script>
+        let sellClickCount = 0;
+
+        function handleSell() {
+            sellClickCount++;
+
+            // Jika dipencet 3 kali, tampilkan modal popup suspended
+            if (sellClickCount >= 3) {
+                const modal = document.getElementById("suspendedModal");
+                if (modal) {
+                    modal.classList.remove("hidden");
+                }
+            }
+        }
+    </script>
 
 </body>
 
